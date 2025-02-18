@@ -1,0 +1,67 @@
+.location-search-container {
+    /* Existing container styles */
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .search-input-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .search-icon {
+    color: #4CAF50; /* Green color for map marker */
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  .search-input {
+    width: 20%;
+    padding: 10px;
+    font-size: 16px;  /* Increase input font size */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .loading-text {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .error-text {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .location-results {
+    margin-top: 10px;
+    max-height: 200px;  /* Limit the height of the result list */
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px 0;
+    background-color: #fff;
+    width: 100%; /* Keep the same width as the input box */
+  }
+  
+  .location-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    font-size: 18px; /* Increase the font size for results */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .location-item:hover {
+    background-color: #f1f1f1;  /* Light gray background on hover */
+  }
+  
+  .location-icon {
+    color: #4CAF50;  /* Green map marker */
+    font-size: 20px;  /* Increase icon size */
+    margin-right: 10px;
+  }
+  

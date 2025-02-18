@@ -1,0 +1,149 @@
+/* Flex container for BudgetList */
+.budget-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: stretch; /* Ensures children stretch to the same height */
+}
+
+/* BudgetList styling for equal height and width */
+.budget-list {
+  flex: 1 1 calc(33.333% - 40px); /* Allows 3 items per row with a gap */
+  min-width: 300px;
+  min-height: 500px; /* Ensures a consistent minimum height */
+  background-color: #1e1e1e;
+  border-radius: 8px; /* Add slight border radius */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures content is evenly spaced */
+}
+
+/* Ensures equal height */
+.budget-list h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: whitesmoke;
+  font-size: 30px;
+  font-weight: 100;
+}
+
+/* Dropdown styling for dark mode */
+select {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border: 1px solid turquoise;
+  border-radius: 4px;
+  padding: 10px;
+  height: 40px;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 14px;
+  appearance: none; /* Remove default dropdown arrow for better styling */
+  text-align: center;
+}
+
+select:focus {
+  outline: none;
+  border-color: turquoise;
+  box-shadow: 0 0 5px turquoise;
+}
+
+/* Budget item styling */
+.budget-item {
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #1e1e1e;
+  color: whitesmoke;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  flex-grow: 1; /* Ensures items grow to fill space */
+}
+
+.budget-item h3 {
+  color: turquoise;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.budget-item p {
+  margin: 15px 0;
+  color: whitesmoke; /* Ensures all paragraphs have white text */
+}
+
+.budget-item strong {
+  color: turquoise;
+}
+
+/* Add margin-bottom for padding when data is less */
+.budget-list:last-child {
+  margin-bottom: auto; /* Pushes any extra space to the bottom */
+}
+
+.budget-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.desktop-view {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.mobile-view {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.mobile-view button {
+  position: absolute;
+  top: 10px;
+  background-color: turquoise;
+  color: #1e1e1e;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 2px; /* Add border radius */
+  margin: 5px; /* Add margin for spacing */
+  z-index: 1;
+}
+
+.mobile-view button:first-child {
+  left: 10px;
+}
+
+.mobile-view button:last-child {
+  right: 10px;
+}
+
+h1 {
+  font-size: 36px; /* Increased font size */
+  text-align: center;
+  margin-bottom: 20px; /* Added margin for spacing */
+  color: turquoise;
+}
+
+@media (max-width: 768px) {
+  h1 {
+      font-size: 30px; /* Adjust font size for smaller screens */
+  }
+
+  .desktop-view {
+      display: none;
+  }
+
+  .mobile-view {
+      display: flex;
+  }
+  .budget-list h2 {
+    font-size: 20px; /* Smaller font size for smaller screens */
+    margin: 40px 0 20px; /* Add spacing between buttons and h2 */
+}
+}

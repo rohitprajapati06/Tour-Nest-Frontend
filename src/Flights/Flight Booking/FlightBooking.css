@@ -1,0 +1,124 @@
+/* Container */
+.flight-from-source-to-destination-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.flight-from-source-to-destination-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 20px;
+}
+
+/* Messages */
+.flight-from-source-to-destination-message {
+    text-align: center;
+    color: mediumaquamarine;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Form */
+.flight-from-source-to-destination-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form Group */
+.flight-from-source-to-destination-form-group {
+    margin-bottom: 15px;
+}
+
+/* Labels */
+.flight-from-source-to-destination-form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Textboxes */
+.flight-from-source-to-destination-input-email,
+.flight-from-source-to-destination-input-phone,
+.flight-from-source-to-destination-input-traveler-name,
+.flight-from-source-to-destination-input-traveler-age {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    margin-bottom: 10px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+/* Remove focus outline */
+.flight-from-source-to-destination-input-email:focus,
+.flight-from-source-to-destination-input-phone:focus,
+.flight-from-source-to-destination-input-traveler-name:focus,
+.flight-from-source-to-destination-input-traveler-age:focus {
+    border-color: dodgerblue;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Buttons */
+.flight-from-source-to-destination-clickablebutton{
+    padding: 12px;
+    font-size: 16px;
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.flight-from-source-to-destination-clickablebutton:hover {
+    background-color: #007bff;
+}
+
+.flight-from-source-to-destination-clickablebutton:disabled {
+    background-color: #b0c4de;
+    cursor: not-allowed;
+}
+
+/* Traveller Details */
+.flight-from-source-to-destination-traveler-details {
+    margin-top: 20px;
+}
+
+/* Traveler Cards */
+.flight-from-source-to-destination-traveler-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Individual Traveler Card */
+.flight-from-source-to-destination-traveler-card {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    text-align: center;
+}
+
+/* Save Details Button */
+.flight-from-source-to-destination-traveler-details button {
+    width: 100%;
+    text-align: center;
+}

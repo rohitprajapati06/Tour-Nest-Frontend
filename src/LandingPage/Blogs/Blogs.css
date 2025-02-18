@@ -1,0 +1,127 @@
+/* General container for layout */
+.lp-container {
+    display: flex;
+    flex-direction: column; /* Stack video-description pairs vertically */
+    gap: 20px; /* Add spacing between pairs */
+    padding: 20px;
+    background-color: mediumaquamarine;
+  }
+  
+  /* Import Dancing Script font */
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+  
+  /* Main Heading Styling */
+  .main-heading h1 {
+    font-family: 'Dancing Script', cursive; /* Use Dancing Script font */
+    font-size: 48px; /* Large font size */
+    color: black; /* Match the theme color */
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Space below the heading */
+  }
+  
+  /* Styling for selected text in main heading */
+  .main-heading h1::selection {
+    color: black; /* Text color when selected */
+    background-color: mediumaquamarine; /* Background color when selected */
+  }
+  
+  
+  /* Styles for each video-description pair */
+  .video-container {
+    display: flex;
+    flex-direction: row; /* Align video and description side by side */
+    align-items: center; /* Vertically align video and description */
+    gap: 10px; /* Add spacing between video and description */
+    width: 100%;
+  }
+  
+  /* Video styling */
+  video {
+    width: 60%; /* Adjust video width as needed */
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+  }
+  
+  
+  /* Description styling */
+  .description {
+    flex: 1; /* Allow description to grow to fill available space */
+    background: Gainsboro;
+    color: black;
+    padding: 15px;
+    font-size: 22px;
+    border-left: 12px solid darkgray; /* Add a left border with dark grey color */
+  }
+  
+  /* Specific alignment for alternating layout */
+  .video-left {
+    flex-direction: row; /* Default: video on left, description on right */
+  }
+  
+  .video-right {
+    flex-direction: row-reverse; /* Reverse: video on right, description on left */
+  }
+  
+  /* Button styling */
+  .action-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: darkcyan;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .action-button:hover {
+    background-color: teal;
+  }
+  
+  
+  
+  /* Responsive styling for smaller screens */
+  @media (max-width: 768px) {
+    .video-container {
+      flex-direction: column; /* Stack video and description vertically */
+      align-items: center; /* Center align the contents */
+      gap: 15px; /* Adjust spacing between video and description */
+    }
+  
+    video {
+      width: 100%; /* Make video full width */
+      height: auto; /* Maintain aspect ratio */
+    }
+  
+    .description {
+      width: 100%; /* Make description full width */
+      text-align: center; /* Center align text */
+      border-left: none;
+    }
+  }
+  
+  /* Additional adjustments for very small screens (e.g., phones) */
+  @media (max-width: 480px) {
+    .main-heading h1 {
+      font-size: 36px; /* Reduce heading size */
+    }
+  
+    .action-button {
+      font-size: 14px; /* Adjust button font size */
+      padding: 8px 16px; /* Adjust button padding */
+    }
+  
+    .description {
+      font-size: 18px; /* Adjust description text size */
+      padding: 10px; /* Adjust padding */
+      border-left: none;
+    }
+  }
+  

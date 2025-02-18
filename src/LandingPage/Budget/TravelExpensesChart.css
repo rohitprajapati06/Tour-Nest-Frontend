@@ -1,0 +1,53 @@
+.chart-container {
+    background-color: #1e1e2f;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+  
+  /* Heading styling */
+  .chart-heading {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 100;
+    font-size: clamp(16px, 2vw, 24px); /* Responsive font size */
+  }
+  
+  /* Chart wrapper for responsiveness */
+  .chart-wrapper {
+    width: 90%; /* Adjust width for smaller screens */
+    max-width: 800px; /* Limit the chart size for larger screens */
+    height: 400px; /* Default height */
+    
+  }
+  
+  /* Handle smaller screens */
+  @media (max-width: 768px) {
+    .chart-wrapper {
+      width: 100%; /* Expand to full width */
+      height: 300px; /* Reduce height for smaller screens */
+      margin: 0;
+    }
+  
+    .chart-heading {
+      font-size: 18px; /* Slightly larger text for readability */
+    }
+  }
+  
+  /* Legend styling */
+  .chartjs-legend-text {
+    color: #fff !important; /* White text color for legend */
+    margin-bottom: 10px; /* Add margin below legend text */
+  }
+  
+  /* Adjust gridlines and axes for better spacing */
+  .chart-wrapper .chartjs-grid-lines {
+    margin-bottom: 15px; /* Extra space between grid lines and labels */
+  }
+  

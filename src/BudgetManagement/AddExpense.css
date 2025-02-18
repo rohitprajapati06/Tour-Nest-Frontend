@@ -1,0 +1,136 @@
+
+.unique-add-expense-container {
+    max-width: 1400px;
+    margin: 0px auto 0;
+    padding: 20px;
+    background-color: #1e1e1e; /* Dark background */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Darker shadow */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #e0e0e0; /* Light text */
+}
+
+.unique-add-expense-heading {
+    font-size: 36px;
+    font-weight: 100;
+    margin-bottom: 20px;
+    color: #ffffff; /* Bright heading */
+}
+
+.unique-expense-table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+.unique-expense-table thead th {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #444; /* Subtle border for table header */
+    color: #e0e0e0;
+}
+
+.unique-expense-table tbody td {
+    padding: 10px;
+    color: #e0e0e0;
+}
+
+/* Consistent size for all inputs and select elements */
+.unique-text-input,
+.unique-expense-table select,
+.unique-expense-table input[type="date"],
+.unique-expense-table input[type="number"],
+.unique-expense-table input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #555; /* Darker border */
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: #444; /* Dark input background */
+    color: #e0e0e0; /* Light text color */
+}
+
+/* Remove focus outline */
+.unique-text-input:focus,
+.unique-expense-table select:focus,
+.unique-expense-table input[type="date"]:focus,
+.unique-expense-table input[type="number"]:focus,
+.unique-expense-table input[type="text"]:focus {
+    outline: none;
+    border-color: #51c4d3; /* Accent color for focus */
+    box-shadow: 0 0 5px rgba(81, 196, 211, 0.7); /* Optional focus effect */
+    background-color: #555; /* Slightly lighter background on focus */
+}
+
+/* Button styling */
+.unique-add-expense-button {
+    background-color: #51c4d3; /* Bright accent color */
+    color: #2e2e2e; /* Dark text on button */
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.unique-add-expense-button:hover {
+    background-color: #45a8b3; /* Slightly darker hover effect */
+}
+
+.unique-message {
+    color: #ff6b6b; /* Red for error messages */
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .unique-add-expense-container {
+        margin: 20px 10px 0;
+    }
+
+    /* Consistent size for all inputs and select elements */
+    .unique-text-input,
+    .unique-expense-table select,
+    .unique-expense-table input[type="date"],
+    .unique-expense-table input[type="number"],
+    .unique-expense-table input[type="text"] {
+        width: 210%; /* Ensure inputs take up full width on smaller screens */
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #555; /* Darker border */
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 14px;
+        background-color: #444; /* Dark input background */
+        color: #e0e0e0; /* Light text color */
+    }
+
+    .unique-expense-table {
+        display: block; /* Allow table to stack inputs */
+    }
+
+    .unique-expense-table thead {
+        display: none; /* Hide table header */
+    }
+
+    .unique-expense-table tbody td {
+        display: flex;
+        flex-direction: column; /* Stack inputs vertically */
+        text-align: left; /* Align labels and inputs to the left */
+    }
+
+    .unique-expense-table tbody td:before {
+        content: attr(data-label); /* Use custom data-label for each field */
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .unique-expense-table tbody tr {
+        display: flex;
+        flex-direction: column; /* Stack rows vertically */
+        margin-bottom: 15px; /* Add space between stacked rows */
+    }
+}

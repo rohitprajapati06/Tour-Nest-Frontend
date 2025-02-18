@@ -1,0 +1,327 @@
+.flight-search-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.results-container {
+  display: flex;
+  gap: 20px;
+}
+
+.aggregation-filters {
+  flex: 0 0 300px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.aggregation-filters h3, .aggregation-filters h4 {
+  margin-bottom: 10px;
+}
+
+.airline-logo {
+  height: 20px;
+  margin-top: 5px;
+}
+
+.flight-results {
+  flex: 1;
+}
+
+.flight-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+}
+/* Ensure a clean layout */
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+
+.left-column {
+  width: 30%;
+}
+
+.middle-column {
+  width: 40%;
+}
+
+.right-column {
+  width: 25%;
+}
+
+
+
+
+/* Additional styling for the flight offers */
+.flight-offer {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+}
+
+.baggage-policy-container {
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  width: 30%; /* Adjust this value to your preference */
+  max-width: 350px; /* Optional: limit the maximum width */
+  margin: 0 auto; /* Centers the container */
+  height: 57%;
+}
+
+.baggage-policy-container h2 {
+  margin-bottom: 15px;
+  font-size: 30px;
+  color: #333;
+}
+
+.baggage-policies {
+  list-style: none;
+  padding: 0;
+}
+
+.baggage-policy-item {
+  padding: 10px 0;
+  border-bottom: 1px solid grey;
+  
+}
+
+.baggage-policy-item:last-child {
+  border-bottom: none;
+}
+
+.baggage-policy-details h3 {
+  margin: 0;
+  font-size: 24px;
+  color: black;
+  font-weight: 100;
+  
+}
+
+.baggage-policies a {
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+}
+
+.baggage-policies a:hover {
+  color: #555;
+}
+
+
+/* Aggregation filters */
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.left-column {
+  flex: 1;
+  border-radius: 10px;
+  padding: 15px;
+  margin-right: 20px;
+  background-color: white;
+  max-width: 300px;
+  height: 170%;
+}
+
+.left-column h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.left-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.left-column ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.left-column ul li ul {
+  padding-left: 15px;
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.left-column ul li ul li {
+  margin-bottom: 5px;
+}
+
+.left-column img {
+  margin-top: 5px;
+}
+
+
+/*Middle Column */ 
+
+
+.middle-column {
+  width: 100%;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.flight-offer {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  background-color: white;
+}
+
+.flight-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left-section,
+.right-section {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.carrier-logo {
+  height: 40px;
+  margin-right: 8px; /* Reduced margin for closer positioning */
+}
+.left-section {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end; /* Align contents to the right */
+  text-align: right; /* Align text to the right */
+}
+
+.departure-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align text to the right of the column */
+  margin: 0;
+}
+
+.departure-time,
+.airport-code {
+  margin: 0;
+}
+
+.departure-info,
+.arrival-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0; /* Removed any margins */
+}
+
+.departure-time,
+.arrival-time {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0; /* No margin for closer positioning */
+}
+
+.airport-code {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0; /* Removed bottom margin */
+}
+
+.center-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 20px;
+  width: 20%; /* Make sure the container spans full width */
+}
+
+.flight-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0 15px; /* Adds space on both sides of the icon */
+  z-index: 1; /* Ensure the icon stays above the line */
+  color: gray;
+  user-select: none;
+}
+
+.flight-icon::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top: 2px solid grey; /* Horizontal line */
+  z-index: -1; /* Ensure the line appears behind the icon */
+  width: 65%; /* Make the line span across the entire container */
+  color: grey;
+}
+
+
+.vertical-divider {
+  width: 1px;
+  background-color: #333; /* Darkened the vertical line color */
+  height: 60px;
+  margin: 0 15px;
+}
+
+.price-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.view-details-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  width: 120px;
+  height: 40px;
+  text-align: center;
+}
+
+.view-details-btn:hover {
+  background-color: #333;
+}
+
+
+.aggregation-heading{
+    font-size: 18px;
+    font: bold;
+    
+}
+
+.aggregation-subheading{
+  font-size: 15px;
+  font: bold;
+}
+
+

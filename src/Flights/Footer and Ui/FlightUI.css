@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background: white;
+    border: 1px solid #ddd; /* Overall container border */
+    border-radius: 8px; /* Rounded corners for the container */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for the container */
+    margin: 30px;
+  }
+  
+  .column {
+    padding: 20px;
+    text-align: center;
+    width: 30%;
+  }
+  
+  .ui-icon {
+    width: 80%;
+    height: 80%;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  
+  p {
+    font-size: 14px;
+    color: #555;
+  }
+  

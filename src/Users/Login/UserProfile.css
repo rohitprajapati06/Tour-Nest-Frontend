@@ -1,0 +1,107 @@
+.jwtUser-user-details {
+  position: relative; /* Establishes a containing block for absolute positioning */
+}
+
+.jwtUser-user-details-button {
+  width: 250px;
+  padding: 0;
+  border: none;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+  text-align: right;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.jwtUser-user-details-container {
+  position: absolute; /* Make the dropdown independent of the navbar */
+  top: 100%; /* Position it just below the button */
+  right: 0; /* Align it to the right of the button */
+  z-index: 1000; /* Ensure it appears above other elements */
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: left;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.jwtUser-user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.jwtUser-profile-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.jwtUser-user-username {
+  margin: 0;
+  font-size: 20px;
+}
+
+.jwtUser-user-email {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.jwtUser-user-actions {
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.jwtUser-action-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.jwtUser-action-item:hover {
+  background-color: #f0f0f0;
+}
+
+.jwtUser-action-item span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.jwtUser-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.jwtUser-signup-btn,
+.jwtUser-login-btn {
+  border: 1px solid #ccc;
+  background: transparent;
+  padding: 10px 20px; /* Increased size */
+  border-radius: 20px;
+  font-size: 1rem; /* Increased font size */
+  cursor: pointer;
+}
+
+.jwtUser-signup-btn {
+  background-color: mediumaquamarine;
+  color: white;
+  border: none;
+}
+
+.jwtUser-login-btn {
+  background-color: #38a9e0;
+  color: white;
+  border: none;
+}

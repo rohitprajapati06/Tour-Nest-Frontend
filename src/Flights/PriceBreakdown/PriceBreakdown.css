@@ -1,0 +1,85 @@
+.total-traveller-price-flight-booking {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  max-width: 600px;     /* Increased width */
+  min-height: 500px;    /* Increased height */
+  margin: 50px auto;    /* Centers the container horizontally and adds vertical spacing */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);  /* Optional: adds a subtle shadow for depth */
+}
+
+  
+  .header {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .price-summary {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  .price-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .price-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #333;
+  }
+  
+  .note {
+    font-size: 12px;
+    font-style: italic;
+    color: #555;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .note svg {
+    margin-right: 5px;
+    color: green;
+  }
+  
+  /* Styling for traveller prices section */
+  .traveller-prices {
+    margin-top: 20px;
+  }
+  
+  .traveller-item {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .price-details {
+    margin-left: 4px;
+  }
+  
+
+  .view-price-btn {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: white;
+    color: #0056b3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .view-price-btn:hover {
+    color: black;
+  }
+  

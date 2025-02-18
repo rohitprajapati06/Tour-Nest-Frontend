@@ -1,0 +1,53 @@
+.blogging-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box; /* Ensures padding doesn't affect the overall width */
+
+    overflow-x: hidden; /* Prevents horizontal overflow */
+
+  }
+  
+  .left-column {
+    flex: 1; /* Empty column for spacing */
+  }
+  
+  .center-column {
+    flex: 2; /* Center column for CreateBlog and BlogList */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .right-column {
+    flex: 1; /* Right column for BlogProfile */
+  }
+  
+  
+  .blog-profile {
+    margin-bottom: 10px;
+  }
+  
+ /* Responsive Styles for Small Screens */
+@media (max-width: 768px) {
+    .blogging-container {
+      flex-direction: column; /* Stack columns vertically on small screens */
+      padding: 10px; /* Reduce padding on small screens */
+    }
+  
+    .left-column,
+    .right-column {
+      display: none; /* Hide left and right columns */
+    }
+  
+    .center-column {
+      flex: none; /* Take full width */
+      width: 100%;
+      margin:0;
+    }
+  
+}

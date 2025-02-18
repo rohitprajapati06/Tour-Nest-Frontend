@@ -1,0 +1,252 @@
+/* Main container styles */
+.expense-body {
+  background-color: black;
+}
+
+/* Budget list container */
+.budget-list-userspecific {
+  font-family: 'Arial', sans-serif;
+  color: #f0f0f0;
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 1400px;
+  margin: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Budget list title */
+.budget-list__title {
+  text-align: center;
+  color: #e5e5e5;
+  margin-bottom: 20px;
+}
+
+/* Table container for horizontal scrolling */
+.budget-list__table-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  margin: 20px auto; /* Add spacing around the container */
+  border-radius: 8px; /* Optional: Match the styling with the table */
+}
+
+/* Budget list table */
+.budget-list__table {
+  width: 100%;
+  min-width: 800px; /* Set a minimum width for the table */
+  border-collapse: collapse;
+  margin: 0 auto;
+  background-color: #252525;
+  border: 1px solid #444;
+}
+
+/* Table headers and cells */
+.budget-list__th,
+.budget-list__td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #444;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Table headers */
+.budget-list__th {
+  background-color: #333;
+  color: #f0f0f0;
+  font-weight: bold;
+}
+
+/* Table rows */
+.budget-list__tr:nth-child(even) {
+  background-color: #2e2e2e;
+}
+
+.budget-list__tr:hover {
+  background-color: #3a3a3a;
+}
+
+/* No budgets message */
+.budget-list__no-budgets {
+  text-align: center;
+  color: #bbb;
+}
+
+/* Loading and error messages */
+.budget-list__loading,
+.budget-list__error {
+  text-align: center;
+  color: whitesmoke;
+  margin-top: 20px;
+}
+
+.budget-list__error {
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+/* Delete button styling */
+.budget-list__delete-btn {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 5px;
+}
+
+.budget-list__delete-btn:hover {
+  color: darkred;
+}
+
+/* Responsive adjustments for table container */
+@media (max-width: 768px) {
+  .budget-list__table-container {
+    margin: 10px 0;
+  }
+
+  .budget-list{
+    margin: 0 10px;
+  }
+}
+
+/* Summary box styles */
+.budget-summary-box {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 1400px;
+}
+
+.summary-card {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  flex-direction: column;
+  width: 200px;
+  border: 1px solid black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.summary-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.summary-text p {
+  margin: 0;
+  font-size: 1rem;
+  color: #bdc3c7;
+}
+
+.summary-text h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ecf0f1;
+}
+
+/* Chart section styles */
+.chart-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  max-width: 1400px;
+}
+
+.chart-section > div {
+  flex: 1 1 45%;
+  margin: 10px;
+  min-width: 300px;
+}
+
+/* Box for individual charts */
+.chart-container {
+  background-color: #1e1e1e;
+  padding: 0;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  max-width: 800px;
+  width: 100%;
+  border-radius: 8px;
+  flex-wrap: wrap; /* Ensures the legend moves below the chart on small screens */
+
+}
+
+.chart-heading {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 100;
+  font-size: clamp(16px, 2vw, 24px);
+}
+
+.chart-wrapper {
+  width: 90%;
+  max-width: 800px;
+  height: 400px;
+}
+
+.custom-pie-chart{
+  margin-right: 100px;
+  margin-top: 0;
+}
+
+/* Target the legend text specifically */
+.custom-pie-chart path {
+  stroke: black !important; /* Changes the pie chart border to black */
+}
+.custom-pie-chart text {
+  fill: white !important; /* Ensures the text is white */
+}
+
+/* Optionally style the legend markers for better alignment */
+.custom-pie-chart .MuiPieChart-legend-marker {
+  width: 15px;
+  margin-right: 0px; /* Space between marker and label */
+}
+
+/* Adjust the legend container if needed */
+.custom-pie-chart .MuiPieChart-legend {
+  margin-left: -20px; /* Shift legend slightly left */
+}
+
+@media (max-width: 468px) {
+  .custom-pie-chart {
+    transform: scale(1.2); /* Optional: Adjust scale for smaller screens */
+  }
+}
+
+
+@media (max-width: 768px) {
+  .budget-summary-box {
+    flex-direction: column; /* Stack the cards vertically */
+    align-items: center;
+    margin: 10px;
+  }
+
+  .summary-card {
+    width: 80%; /* Increase width of the cards to fill screen */
+    margin-bottom: 15px; /* Space between cards */
+  }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+  .summary-card {
+    width: 90%; /* Full width on very small screens */
+    font-size: 0.9rem; /* Adjust font size for readability */
+  }
+}

@@ -1,0 +1,121 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly white background */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  border: 1px solid white;
+  margin: 20px 40px 0 40px; /* Margin on top, right, and left */
+  opacity: 0.95;
+}
+  
+  /* Logo Section */
+  .logo-section {
+    display: flex;
+    align-items: center;  /* Align logo and text horizontally */
+  }
+  
+  .logo-text {
+    font-size: 25px;
+    font-weight: 100;
+    font-weight: bold;
+    margin-left: 10px;  /* Space between logo and text */
+  }
+  
+  .logo-highlight {
+    color: #38a9e0; /* Blue color for 'zero' */
+  }
+  
+  .logo-image {
+    width: 40px; /* Adjust size as needed */
+    height: 40px;
+  }
+  
+  /* Navigation Links */
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0;
+    margin-left: 30px; /* Added margin from the logo text */
+  }
+  
+  .nav-links li {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+  }
+  
+  /* Icon Styles */
+  .nav-icon {
+    font-size: 1.8rem; /* Increased size for better visibility */
+    fill: white; /* White fill */
+    stroke: black; /* Black outline */
+    stroke-width: 10px; /* Thickness of the outline */
+    transition: all 0.3s ease; /* Smooth transition effect */
+  }
+  
+  /* Hover Colors */
+  .nav-links a:hover .nav-icon,
+  .nav-links a:focus .nav-icon {
+    fill: #555; /* Slightly darker color on hover */
+    stroke: #555;
+  }
+  
+  /* Active Link */
+  .nav-links .active a .nav-icon {
+    fill: dodgerblue; /* Dodger blue color on active */
+    stroke: dodgerblue;
+  }
+  
+  .nav-links .active a {
+    color: dodgerblue; /* Change text color to match active icon color */
+  }
+  
+  /* Action Buttons */
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .signup-btn,
+  .login-btn {
+    border: 1px solid #ccc;
+    background: transparent;
+    padding: 10px 20px; /* Increased size */
+    border-radius: 20px;
+    font-size: 1rem; /* Increased font size */
+    cursor: pointer;
+  }
+  
+  .signup-btn {
+    background-color: mediumaquamarine;
+    color: white;
+    border: none;
+  }
+  
+  .login-btn {
+    background-color: #38a9e0;
+    color: white;
+    border: none;
+  }
+
+  
+  

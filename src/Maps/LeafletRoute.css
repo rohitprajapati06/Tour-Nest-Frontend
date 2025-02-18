@@ -1,0 +1,85 @@
+/* Scoped input field */
+.maps-route-container #maps-destination {
+  position: absolute;
+  z-index: 1000;
+  top: 10px;
+  left: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Scoped button */
+.maps-route-container button {
+  position: absolute;
+  z-index: 1000;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Route button */
+.maps-route-container button#maps-route-btn {
+  top: 10px;
+  left: 200px;
+  background: #007BFF;
+  color: #fff;
+}
+
+/* Minimize/Maximize buttons with unique class */
+.maps-route-container .maps-route-minimize-btn,
+.maps-route-container .maps-route-maximize-btn {
+  position: absolute;
+  z-index: 1000;
+  top: 10px;
+  right: 10px;
+  padding: 15px;
+  border-radius: 2px;
+  border: none;
+  background: #fff;
+  color: grey;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/* Ensure minimize button is in the top-right corner of the route details */
+.leaflet-routing-container .maps-route-minimize-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 2000;
+  padding: 15px;
+  border: none;
+  border-radius: 2px;
+  background: #fff;
+  color: grey;
+  cursor: pointer;
+  font-size: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  
+}
+
+/* Map container */
+.maps-route-container #maps-map {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Routing container */
+.maps-route-container .leaflet-routing-container {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Zoom controls */
+.maps-route-container .leaflet-control-zoom {
+  position: absolute !important;
+  top: 70px !important;
+  left: 10px !important;
+  z-index: 1000;
+}

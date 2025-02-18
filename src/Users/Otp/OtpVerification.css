@@ -1,0 +1,103 @@
+.otp-verification {
+    width: 350px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .otp-header .icon {
+    width: 250px;   /* Set width to 250px */
+    height: 250px;  /* Set height to 250px */
+    margin-bottom: 10px;
+  }
+  
+  .otp-header .gicon {
+    width: 60px;    /* Keep Gmail icon at 50px */
+    height: 60px;
+    margin-bottom: 10px;
+  }
+  
+  .otp-header h2 {
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: #333;
+  }
+  
+  .otp-header p {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+  }
+  
+  .otp-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0; /* Reduced from 20px */
+}
+  
+  .otp-box {
+    width: 70px;
+    height: 60px;
+    font-size: 24px;
+    text-align: center;
+    border: 2px solid mediumaquamarine;
+    border-radius: 4px;
+    color: #333;
+    margin: 0;
+    
+  }
+  
+  .resend-text {
+    color: #555;
+    font-size: 14px;
+    margin: 5px 0; /* Adjusted to reduce gap */
+}
+  
+  .resend-link {
+    color: mediumseagreen;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .otp-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .cancel-btn, .verify-btn {
+    width: 45%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .cancel-btn {
+    background-color: #e0e0e0;
+    color: #333;
+  }
+  
+  .verify-btn {
+    background-color: mediumaquamarine;
+    color: #fff;
+  }
+  
+  .success-message, .error-message {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .success-message {
+    color: mediumseagreen;
+  }
+  
+  .error-message {
+    color: #f44336;
+  }
+  

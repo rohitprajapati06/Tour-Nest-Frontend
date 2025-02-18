@@ -1,0 +1,114 @@
+.slider-container {
+    position: relative;
+    max-width: 100%;
+    margin: 20px 0;
+    overflow: hidden; /* Hide overflow to create sliding effect */
+    text-align: center;
+    border-top: 1px solid lightgray;
+}
+
+/* In your CSS file (e.g., App.css) */
+.slider-title {
+    font-size: 50px;
+    font-weight: 100;
+    margin-bottom: 20px;
+    color: black;
+    font-family: 'Playfair Display', serif;
+}
+
+
+.slide {
+    flex: 0 0 20%; /* Each slide takes 20% of the container width */
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: #ffffff;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for elegance */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensures no extra spacing around the image */
+    margin: 5px; /* Remove extra spacing */
+
+}
+
+.slide:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+
+}
+
+.slide-image {
+    width: 100%; /* Ensures the image takes full width */
+    height: 200px; /* Fixed height for consistent display */
+    object-fit: cover; /* Ensure the image covers the full box */
+    margin: 0px; /* Remove any extra space around the image */
+    border-top-right-radius:12px;
+    border-top-left-radius: 12px;
+    
+}
+
+.slider-wrapper {
+    overflow: hidden; /* Ensures only visible items are displayed */
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth sliding effect */
+}
+
+.arrow {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    background: whitesmoke;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+    color: black;
+}
+
+.arrow.prev {
+    left: 10px;
+}
+
+.arrow.next {
+    right: 10px;
+}
+
+.slide h2 {
+    font-size: 28px; /* Smaller font size for name */
+    font-weight: 100;
+    color: black; /* Black color for text */
+    margin: 10px 0 5px; /* Add some margin for spacing */
+    font-family: 'Playfair Display', serif;
+
+}
+@media (max-width: 768px) {
+    .slide {
+        flex: 0 0 50%; /* Show 2 cards per screen on smaller devices */
+    }
+
+    .slide h2 {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
+
+    .slide-image {
+        height: 150px; /* Adjust image height for smaller screens */
+    }
+
+   
+}
+
+@media (max-width: 480px) {
+    .slide {
+        flex: 0 0 100%; /* Show 1 card per screen on very small devices */
+    }
+
+   
+
+    .slide h2 {
+        font-size: 18px; /* Smaller font size for slide titles */
+    }
+}

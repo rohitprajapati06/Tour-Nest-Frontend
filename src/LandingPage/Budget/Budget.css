@@ -1,0 +1,25 @@
+/* Target the legend text specifically */
+.custom-pie-chart path {
+    stroke: black !important; /* Changes the pie chart border to black */
+  }
+  .custom-pie-chart text {
+    fill: white !important; /* Ensures the text is white */
+  }
+  
+  /* Optionally style the legend markers for better alignment */
+  .custom-pie-chart .MuiPieChart-legend-marker {
+    width: 15px;
+    margin-right: 8px; /* Space between marker and label */
+  }
+  
+  /* Adjust the legend container if needed */
+  .custom-pie-chart .MuiPieChart-legend {
+    margin-left: -20px; /* Shift legend slightly left */
+  }
+  
+  @media (max-width: 768px) {
+    .custom-pie-chart {
+      transform: scale(1.2); /* Optional: Adjust scale for smaller screens */
+    }
+  }
+  

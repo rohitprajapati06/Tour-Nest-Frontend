@@ -1,0 +1,106 @@
+/* Base Styles for EmergencyContact */
+.Emergencychange {
+  overflow-x: hidden;
+  padding: 0 10px; /* Add padding for small margins on both sides */
+}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 25px;
+  width: 100%;
+  border: 1px solid lightgray;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 10px;
+  display: none; /* Hidden by default */
+  overflow: hidden;
+  background-color: white;
+}
+
+.panel.active {
+  display: block; /* Show the panel when active */
+}
+
+.symbol {
+  float: right;
+  font-size: 20px;
+  margin-left: auto;
+  color: grey;
+}
+
+.success {
+  background-color: #f2f2f2;
+  border-left: 8px solid grey;
+  padding: 16px;
+  margin: 20px;
+}
+
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .accordion {
+      font-size: 16px;
+      padding: 20px;
+  }
+
+  .search-bar {
+      font-size: 14px;
+      padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Emergencychange {
+      padding: 0 20px; /* Increase padding for smaller screens */
+  }
+
+  .accordion {
+      font-size: 14px;
+      padding: 15px;
+  }
+
+  .search-bar {
+      width: calc(100% - 40px); /* Ensure consistent margins */
+      font-size: 12px;
+      padding: 6px 10px;
+      margin: 0 20px; /* Add margin for small screens */
+  }
+
+  .panel {
+      margin-left: 0; /* Remove extra indentation for smaller screens */
+  }
+}

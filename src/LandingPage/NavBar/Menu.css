@@ -1,0 +1,24 @@
+/* Default: Show NavBar, hide BottomNavbar */
+.navbar {
+    display: flex; /* Show the top navigation bar */
+  }
+  .bottom-navbar {
+    display: none; /* Hide the bottom navigation bar */
+  }
+  .header{
+    display: none;
+  }
+  
+  /* For smaller screens: Hide NavBar, show BottomNavbar */
+  @media (max-width: 768px) {
+    .navbar {
+        display: none; /* Hide the top navigation bar */
+    }
+    .bottom-navbar {
+        display: flex; /* Show the bottom navigation bar */
+    }
+    .header{
+      display: flex;
+    }
+  }
+  

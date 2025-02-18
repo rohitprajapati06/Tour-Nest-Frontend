@@ -1,0 +1,94 @@
+.bottom-navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    height: 60px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+    color: #888;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .nav-icon span {
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  
+  .nav-icon:hover {
+    color: #007bff; /* Change color on hover */
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .logo-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-image {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    object-fit: cover;
+  }
+  
+  .logo-text {
+    font-size: 23px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .logo-text::selection {
+    color: turquoise;
+  }
+  .logo-highlight {
+    color: turquoise; /* Highlight color */
+  }
+
+  .logo-highlight::selection {
+    color: black; /* Highlight color */
+  }
+  
+  .signin-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .signin-button {
+    text-decoration: none;
+    font-size: 20px;
+    color: grey;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .signin-button:hover {
+    background-color: lightblue;
+    color: #fff;
+    border: none;
+  }
+    
