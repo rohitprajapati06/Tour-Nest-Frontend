@@ -23,7 +23,7 @@ const Dashboard = () => {
         display: "flex",
         flexDirection: "column",
         height: "100%", // Adjust to take full height but better for normal screens
-        backgroundColor: "#1e1e2f", // Background color for the entire container
+        backgroundColor: "#1e1e1e", // Background color for the entire container
         minHeight: "100vh", // Ensures at least full viewport height on smaller screens
       }}
     >

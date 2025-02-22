@@ -37,4 +37,15 @@ body {
     font-size: 14px;
     color: #555;
   }
-  
+  /* Responsive: Stack items on smaller screens */
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items */
+  }
+
+  .column {
+      width: 90%; /* Full width for each item */
+      margin-bottom: 20px; /* Add spacing between stacked items */
+  }
+}

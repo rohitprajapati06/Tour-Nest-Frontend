@@ -113,3 +113,40 @@ form input[type="password"] {
 .social-btn:hover {
     opacity: 0.9;
 }
+
+@media screen and (max-width: 768px) {
+    .split-screen {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .left {
+        display: none; /* Hide the left image section */
+    }
+
+    .right {
+        flex: 1;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        background: url("https://cdn.pixabay.com/photo/2020/07/10/04/06/pink-algae-5389441_1280.jpg") no-repeat center center/cover;
+    }
+
+    .form {
+        width: 90%;
+        max-width: 350px;
+        background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    form input[type="email"],
+    form input[type="password"] {
+        width: 100%;
+    }
+
+    .loginbtn {
+        width: 100%;
+    }
+}

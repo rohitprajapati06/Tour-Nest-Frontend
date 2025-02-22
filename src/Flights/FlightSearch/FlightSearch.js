@@ -194,7 +194,19 @@ const FlightsSearch = () => {
           </video>
       </div>
       <div className="loader-message">
-                <h2 style={{color: "GoldenRod", fontWeight: "bold",fontSize:'50px',textAlign:'center'}}>We Are Getting Flights For You</h2>
+      <h2
+          style={{
+            color: "GoldenRod", // Keeps the elegant golden shade
+            fontWeight: "bold",
+            fontSize: "50px",
+            textAlign: "center",
+            letterSpacing: "2px", // Adds spacing for better readability
+            textShadow: "4px 4px 10px rgba(0, 0, 0, 0.8), 2px 2px 5px rgba(218, 165, 32, 0.7)", // Dual-layer shadow
+          }}
+        >
+          We Are Getting Flights For You
+        </h2>
+
       </div>
       </div> )}
 

@@ -21,7 +21,7 @@
   
   /* Chart wrapper for responsiveness */
   .chart-wrapper {
-    width: 90%; /* Adjust width for smaller screens */
+    width: 100%; /* Adjust width for smaller screens */
     max-width: 800px; /* Limit the chart size for larger screens */
     height: 400px; /* Default height */
     

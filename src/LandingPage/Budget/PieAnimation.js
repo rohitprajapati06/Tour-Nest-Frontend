@@ -5,7 +5,8 @@ import "./Budget.css";
 
 export default function PieAnimation() {
   const [itemNb, setItemNb] = useState(1);
-  const [radius, setRadius] = useState(50); // State to handle radius size
+  const [radius, setRadius] = useState(50);
+  const [chartSize, setChartSize] = useState(300); // Default chart height
 
   const colors = [
     "#66CDAA", // MediumAquaMarine
@@ -23,13 +24,15 @@ export default function PieAnimation() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        setRadius(40); // Adjust radius for smaller screens
+        setRadius(30); // Reduce inner radius for small screens
+        setChartSize(200); // Smaller chart for mobile
       } else {
         setRadius(50); // Default radius for larger screens
+        setChartSize(300); // Default chart size
       }
     };
 
-    // Set radius on initial load and resize
+    // Set initial size
     handleResize();
     window.addEventListener("resize", handleResize);
 
@@ -43,10 +46,10 @@ export default function PieAnimation() {
         }
       }, 500);
 
-      // Restart the animation after 5 seconds
+      // Restart animation after 5 seconds
       const timeout = setTimeout(() => {
-        setItemNb(1); // Reset the chart
-        startAnimation(); // Restart animation
+        setItemNb(1);
+        startAnimation();
       }, 5000);
 
       return () => {
@@ -58,7 +61,7 @@ export default function PieAnimation() {
     startAnimation();
 
     return () => {
-      window.removeEventListener("resize", handleResize); // Cleanup resize event listener
+      window.removeEventListener("resize", handleResize);
       setItemNb(1);
     };
   }, []);
@@ -68,22 +71,24 @@ export default function PieAnimation() {
       sx={{
         width: "100%",
         height: "100%",
-        backgroundColor: "#1e1e2f",
+        backgroundColor: "#1e1e1e",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        flexDirection: "column", // Ensure the heading is above the chart
-        gap: 5, // Reduced gap between heading and pie chart
-        maxWidth:"800px",
+        flexDirection: "column",
+        gap: 4,
+        maxWidth: "800px",
+        padding: "10px",
       }}
     >
-      {/* Heading for Pie Chart */}
+      {/* Responsive Heading */}
       <h2
         style={{
           color: "#fff",
           textAlign: "center",
           fontWeight: "100",
-          marginTop: "25px",
+          fontSize: window.innerWidth < 768 ? "18px" : "24px",
+          marginTop: "30px",
         }}
       >
         "Get Started with Paris"
@@ -91,13 +96,13 @@ export default function PieAnimation() {
 
       <PieChart
         className="custom-pie-chart"
-        height={300}
+        height={chartSize}
         series={[
           {
             data: dataWithColors.slice(0, itemNb),
             innerRadius: radius,
-            arcLabel: (params) => params.label, // Arc label visible on the pie chart
-            arcLabelMinAngle: 20, // Show arc label only if the angle is large enough
+            arcLabel: (params) => params.label,
+            arcLabelMinAngle: 20,
             tooltip: (params) => `${params.label}: ${String(params.value)}%`,
           },
         ]}
