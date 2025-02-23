@@ -1,144 +1,145 @@
-import React, { useState } from 'react';
-import './ProfileManagement.css'; 
-import { FaCamera, FaEnvelope, FaKey, FaUserEdit, FaBookmark } from 'react-icons/fa';
-import BlogProfile from '../../Blogging/BlogProfile';
-import UpdateUsername from './UpdateUsername';
-import UpdateEmail from './UpdateEmail';
-import UpdatePassword from './UpdatePassword';
-import BookingList from '../../Flights/Flight Booking/BookingList';
+import React, { useState, useEffect } from "react";
+import "./ProfileManagement.css";
+import { FaCamera, FaEnvelope, FaKey, FaUserEdit, FaBookmark, FaArrowLeft, FaSignOutAlt } from "react-icons/fa";
+import BlogProfile from "../../Blogging/BlogProfile";
+import UpdateUsername from "./UpdateUsername";
+import UpdateEmail from "./UpdateEmail";
+import UpdatePassword from "./UpdatePassword";
+import BookingList from "../../Flights/Flight Booking/BookingList";
+import { useNavigate } from "react-router-dom";
 
 function ProfileManagement() {
-  const [activeTab, setActiveTab] = useState('EditUsername');
+  const [activeTab, setActiveTab] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const navigate = useNavigate();
+
+  // Handle screen resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const openTab = (tabName) => {
-    setActiveTab(tabName);
+    if (tabName === "Logout") {
+      handleLogout(); // Log out the user immediately when the "Logout" tab is clicked
+    } else {
+      setActiveTab(tabName); // Open other tabs
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+    navigate("/login"); // Redirect to login page
   };
 
   return (
     <div className="prolific-profile-management-container">
-      <div className="prolific-profile-management-user">
-        {/* Tab navigation */}
-        <div className="prolific-profile-management-user-tab">
-          <button
-            className={`prolific-profile-management-user-tablinks ${activeTab === 'EditUsername' ? 'active' : ''}`}
-            onClick={() => openTab('EditUsername')}
-          >
+      {isMobile && !activeTab ? (
+        // Show tab buttons for mobile view
+        <div className="prolific-profile-management-user-tab mobile">
+          <button onClick={() => openTab("EditUsername")}>
             <FaUserEdit /> Edit Username
           </button>
-          <button
-            className={`prolific-profile-management-user-tablinks ${activeTab === 'AddProfilePhoto' ? 'active' : ''}`}
-            onClick={() => openTab('AddProfilePhoto')}
-          >
+          <button onClick={() => openTab("AddProfilePhoto")}>
             <FaCamera /> Add Profile Photo
           </button>
-          <button
-            className={`prolific-profile-management-user-tablinks ${activeTab === 'UpdateEmail' ? 'active' : ''}`}
-            onClick={() => openTab('UpdateEmail')}
-          >
+          <button onClick={() => openTab("UpdateEmail")}>
             <FaEnvelope /> Update Email
           </button>
-          <button
-            className={`prolific-profile-management-user-tablinks ${activeTab === 'UpdatePassword' ? 'active' : ''}`}
-            onClick={() => openTab('UpdatePassword')}
-          >
+          <button onClick={() => openTab("UpdatePassword")}>
             <FaKey /> Update Password
           </button>
-          {/* New button for My Booking */}
-          <button
-            className={`prolific-profile-management-user-tablinks ${activeTab === 'MyBooking' ? 'active' : ''}`}
-            onClick={() => openTab('MyBooking')}
-          >
+          <button onClick={() => openTab("MyBooking")}>
             <FaBookmark /> My Bookings
           </button>
+          <button onClick={() => openTab("Logout")}>
+            <FaSignOutAlt /> Log Out
+          </button>
         </div>
+      ) : (
+        <div className={`prolific-profile-management-user ${isMobile ? "mobile-view" : ""}`}>
+          {!isMobile && (
+            <div className="prolific-profile-management-user-tab">
+              <button
+                className={activeTab === "EditUsername" ? "active" : ""}
+                onClick={() => openTab("EditUsername")}
+              >
+                <FaUserEdit /> Edit Username
+              </button>
+              <button
+                className={activeTab === "AddProfilePhoto" ? "active" : ""}
+                onClick={() => openTab("AddProfilePhoto")}
+              >
+                <FaCamera /> Add Profile Photo
+              </button>
+              <button
+                className={activeTab === "UpdateEmail" ? "active" : ""}
+                onClick={() => openTab("UpdateEmail")}
+              >
+                <FaEnvelope /> Update Email
+              </button>
+              <button
+                className={activeTab === "UpdatePassword" ? "active" : ""}
+                onClick={() => openTab("UpdatePassword")}
+              >
+                <FaKey /> Update Password
+              </button>
+              <button
+                className={activeTab === "MyBooking" ? "active" : ""}
+                onClick={() => openTab("MyBooking")}
+              >
+                <FaBookmark /> My Bookings
+              </button>
+              <button
+                className={activeTab === "Logout" ? "active" : ""}
+                onClick={() => openTab("Logout")}
+              >
+                <FaSignOutAlt /> Log Out
+              </button>
+            </div>
+          )}
 
-        {/* Tab contents */}
-        <div
-          className="prolific-profile-management-user-tabcontent"
-          style={{ display: activeTab === 'EditUsername' ? 'block' : 'none' }}
-        >
-          <h3>Edit Username <FaUserEdit /></h3>
-          <p>Give your online presence a fresh new look by updating your name!</p>
-          <UpdateUsername />
-        </div>
+          {/* Show selected tab content */}
+          {activeTab && isMobile && (
+            <button style={{ backgroundColor: "#ccc" }} className="prolific-profile-management-back-button" onClick={() => setActiveTab(null)}>
+              <FaArrowLeft />
+            </button>
+          )}
 
-        <div
-          className="prolific-profile-management-user-tabcontent"
-          style={{
-            display: activeTab === 'AddProfilePhoto' ? 'block' : 'none',
-            textAlign: 'center',
-            padding: '20px',
-          }}
-        >
-          <h3>
-            Add Profile Photo <FaCamera />
-          </h3>
-          <p>
-            Your profile photo is more than just a picture - it's a representation of who you are and what you're about.
-            <br /> By updating your profile photo, you can showcase your authentic self.
-            <br /> So why wait? Upload a new profile photo today and start building meaningful connections!
-          </p>
-          <br />
-          <q>Update your profile by clicking on it!</q>
+          <div className="prolific-profile-management-user-tabcontent" style={{ display: activeTab === "EditUsername" ? "block" : "none" }}>
+            <h3>Edit Username <FaUserEdit /></h3>
+            <p>Update your name for a fresh online presence.</p>
+            <UpdateUsername />
+          </div>
 
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div className="prolific-profile-management-user-tabcontent" style={{ display: activeTab === "AddProfilePhoto" ? "block" : "none" }}>
+            <h3>Add Profile Photo <FaCamera /></h3>
+            <p>Upload a new profile picture to personalize your account.</p>
             <BlogProfile />
           </div>
-        </div>
 
-        <div
-          className="prolific-profile-management-user-tabcontent"
-          style={{ display: activeTab === 'UpdateEmail' ? 'block' : 'none' }}
-        >
-          <h3>Update Email <FaEnvelope /></h3>
-          <p>Update your email address to ensure you receive important notifications and stay connected with us.</p>
-          <UpdateEmail />
-        </div>
-
-        <div
-          className="prolific-profile-management-user-tabcontent"
-          style={{
-            display: activeTab === 'UpdatePassword' ? 'block' : 'none',
-            textAlign: 'center',
-            padding: '20px',
-          }}
-        >
-          <h3>
-            Update Password <FaKey />
-          </h3>
-          <p>
-            Protecting your account and personal information is our top priority.
-            <br />
-            Updating your password regularly is a crucial step in maintaining the security of your account.
-            <br />
-            By choosing a strong and unique password, you'll significantly reduce the risk of unauthorized access.
-          </p>
-
-          <div style={{ marginTop: '20px', textAlign: 'left', marginLeft: '20%' }}>
-            <p>
-              <strong>When updating your password, remember to follow these best practices:</strong>
-            </p>
-            <ul style={{ listStyleType: 'none', paddingLeft: 0, lineHeight: '1.8' }}>
-              <li>‣ Use a combination of uppercase and lowercase letters</li>
-              <li>‣ Incorporate numbers and special characters</li>
-              <li>‣ Avoid using easily guessable information (e.g., name, birthdate)</li>
-              <li>‣ Choose a password that's at least 8 characters long</li>
-            </ul>
+          <div className="prolific-profile-management-user-tabcontent" style={{ display: activeTab === "UpdateEmail" ? "block" : "none" }}>
+            <h3>Update Email <FaEnvelope /></h3>
+            <p>Keep your email updated for important notifications.</p>
+            <UpdateEmail />
           </div>
 
-          <UpdatePassword />
-        </div>
+          <div className="prolific-profile-management-user-tabcontent" style={{ display: activeTab === "UpdatePassword" ? "block" : "none" }}>
+            <h3>Update Password <FaKey /></h3>
+            <p>Enhance security by updating your password regularly.</p>
+            <UpdatePassword />
+          </div>
 
-        {/* New tab content for MyBookings */}
-        <div
-          className="prolific-profile-management-user-tabcontent"
-          style={{ display: activeTab === 'MyBooking' ? 'block' : 'none' }}
-        >
-          <h3>My Bookings <FaBookmark /></h3>
-          <p>Manage your flight bookings below:</p>
-          <BookingList /> {/* Embed the BookingList component here */}
+          <div className="prolific-profile-management-user-tabcontent" style={{ display: activeTab === "MyBooking" ? "block" : "none" }}>
+            <h3>My Bookings <FaBookmark /></h3>
+            <p>View and manage your flight bookings.</p>
+            <BookingList />
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

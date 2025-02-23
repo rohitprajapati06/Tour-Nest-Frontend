@@ -2,6 +2,7 @@
   font-family: "Lato", sans-serif;
 }
 
+/* Default layout for larger screens */
 .prolific-profile-management-user-tab {
   float: left;
   border: 1px solid #ccc;
@@ -34,14 +35,47 @@
 
 .prolific-profile-management-user-tabcontent {
   float: left;
-  padding: 0px 12px;
+  padding: 20px;
   width: 80%;
   height: 100vh;
   display: none;
   text-align: center;
-  margin: 30px auto;
+  margin: auto;
 }
 
-.prolific-profile-management-user-tabcontent h3 {
-  margin-top: 0;
+/* Mobile view */
+@media screen and (max-width: 768px) {
+  .prolific-profile-management-user-tab {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .prolific-profile-management-user-tab button {
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .prolific-profile-management-user.mobile-view {
+    width: 100%;
+    height: auto;
+  }
+
+  .prolific-profile-management-user-tabcontent {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .prolific-profile-management-back-button{
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #ccc;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
 }
