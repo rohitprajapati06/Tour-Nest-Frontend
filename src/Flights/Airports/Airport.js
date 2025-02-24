@@ -47,7 +47,7 @@ const Airport = ({ placeholder, onSelect }) => {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         style={{
-          width: "103%",
+          width: "107%",
           height: "100.5%",
           border: "1px solid #ccc",
           borderRadius: "5px",

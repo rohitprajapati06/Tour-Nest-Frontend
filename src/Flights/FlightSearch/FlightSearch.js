@@ -98,23 +98,36 @@ const FlightsSearch = () => {
 
   return (
     <>
-    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif",margin:'0' }}>
+    <div style={{fontFamily: "Arial, sans-serif",margin:'0' }}>
       <div className="flight-parameter">
+        <h1 className="flight-heading-parameter"> <br/>Where would you like to travel this season?</h1>
   <form onSubmit={handleSearch} className="flight-booking-search-form">
     <table className="flight-booking-search-form-table">
+    <thead className="flight-booking-search-tabhead-table">
+          <tr className="flight-booking-search-form-header-row">
+            <th className="flight-booking-search-form-th">From</th>
+            <th className="flight-booking-search-form-th">To</th>
+            <th className="flight-booking-search-form-th">Departure Date</th>
+            <th className="flight-booking-search-form-th">Return Date</th>
+            <th className="flight-booking-search-form-th">Cabin Class</th>
+            <th className="flight-booking-search-form-th">Adults</th>
+            <th className="flight-booking-search-form-th">Childrens</th>
+            <th className="flight-booking-search-form-th"></th>
+          </tr>
+        </thead>
       <tbody>
         <tr className="flight-booking-search-form-row">
           <td className="flight-booking-search-form-td">
             <Airport 
               className="flight-booking-search-form-airport-input" 
-              placeholder="From"
+              placeholder="Search by city, country, names"
               onSelect={(value) => handleAirportSelect("fromId", value)} 
             />
           </td>
           <td className="flight-booking-search-form-td">
             <Airport 
               className="flight-booking-search-form-airport-input" 
-              placeholder="To" 
+              placeholder="Search by city, country, names" 
               onSelect={(value) => handleAirportSelect("toId", value)} 
             />
           </td>
@@ -132,27 +145,9 @@ const FlightsSearch = () => {
             <input 
               type="date" 
               className="flight-booking-search-form-input-date" 
+              placeholder="Enter Return Date"
               name="returnDate" 
               value={formData.returnDate} 
-              onChange={handleInputChange} 
-            />
-          </td>
-          <td className="flight-booking-search-form-td">
-            <input 
-              type="number" 
-              className="flight-booking-search-form-input-number" 
-              placeholder="adults" 
-              name="adults" 
-              value={formData.adults} 
-              onChange={handleInputChange} 
-            />
-          </td>
-          <td className="flight-booking-search-form-td">
-            <input 
-              type="number" 
-              className="flight-booking-search-form-input-number" 
-              name="children" 
-              value={formData.children} 
               onChange={handleInputChange} 
             />
           </td>
@@ -169,6 +164,26 @@ const FlightsSearch = () => {
               <option value="PREMIUM_ECONOMY">Premium Economy</option>
             </select>
           </td>
+          <td className="flight-booking-search-form-td">
+            <input 
+              type="number" 
+              className="flight-booking-search-form-input-number" 
+              placeholder="adults" 
+              name="adults" 
+              value={formData.adults} 
+              onChange={handleInputChange} 
+            />
+          </td>
+          <td className="flight-booking-search-form-td">
+            <input 
+              type="number" 
+              className="flight-booking-search-form-input-number" 
+              name="children" 
+              placeholder="Enter number of childrens"
+              onChange={handleInputChange} 
+            />
+          </td>
+          
           <td className="flight-booking-search-form-td">
             <button type="submit" className="flight-booking-search-form-search-button">Search</button>
           </td>

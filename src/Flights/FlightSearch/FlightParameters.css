@@ -1,9 +1,15 @@
 .flight-parameter {
   background-color: darkcyan; /* Background color */
-  height: 100px; /* Adjust the height of the container */
+  height: 250px; /* Adjust the height of the container */
   justify-content: center; /* Center content horizontally */
   align-items: center; /* Center content vertically */
-  border-radius: 8px; /* Optional rounded corners */
+}
+.flight-heading-parameter{
+  margin-top: 0;
+  font-size: 50px;   
+  color: white;
+  font-weight: lighter; 
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .flight-booking-search-form-table {
   margin: 1% ;
@@ -24,6 +30,19 @@
   width: auto; /* Allow column width to adjust based on content */
   height: 40px; /* Set the height of the td */
   border: none; /* Remove border for each table cell */
+}
+
+.flight-booking-search-tabhead-table{
+  color: white;
+  text-align: left; /* Align table headers to the left */
+  padding: 10px;
+  font-weight: 100;
+  margin-left: 20px; /* Add left margin to shift the table header to the right */
+
+}
+
+.flight-booking-search-form-th {
+  padding-left: 10px; /* Optional: Add some padding to the left of each header cell */
 }
 
 .flight-booking-search-form-airport-input,
@@ -72,23 +91,32 @@
 }
 
 /* Responsive Styles */
+
+.flight-booking-search-form-search-button:hover {
+  background-color: aquamarine;
+}
+
+/* Responsive Styles */
 @media screen and (max-width: 768px) {
   .flight-booking-search-form-table {
     display: block;
   }
 
   .flight-booking-search-form-row {
-    display: block;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
   }
 
   .flight-booking-search-form-td {
     display: block;
     margin-bottom: 10px;
-    width: 100%;
+    width: 100%; /* Full width for each input */
+    height: auto; /* Adjust height to fit content */
   }
 
   .flight-booking-search-form-search-button {
     margin-top: 10px;
-    width: 100%;
+    width: 100%; /* Full width for the button */
+    max-width: none; /* Remove max-width restriction */
   }
 }
