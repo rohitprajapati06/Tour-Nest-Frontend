@@ -1,20 +1,23 @@
 import React from "react";
-import { FaHome, FaMapSigns, FaPlaneDeparture, FaPhoneAlt, FaClipboardList, FaUser } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";  // Updated import
+import { FaHome, FaMapSigns, FaPlaneDeparture, FaPhoneAlt, FaUser, FaTumblrSquare } from "react-icons/fa";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./BottomNavbar.css";
 
 const BottomNavbar = () => {
-  const navigate = useNavigate(); // Using useNavigate instead of useHistory
-  
-  // Check if user is logged in by verifying if JWT token exists
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const isLoggedIn = localStorage.getItem("accessToken") ? true : false;
 
-  // Handle click on user icon (Profile or Login)
   const handleUserClick = () => {
-    if (isLoggedIn) {
-      navigate("/userprofile"); // Redirect to UserProfile if logged in
+    navigate(isLoggedIn ? "/userprofile" : "/login");
+  };
+
+  const handleNavigation = (path) => {
+    if ((path === "/Chatbot" || path === "/EmergencyContact") && !isLoggedIn) {
+      navigate("/login");
     } else {
-      navigate("/login"); // Redirect to Login page if not logged in
+      navigate(path);
     }
   };
 
@@ -29,33 +32,38 @@ const BottomNavbar = () => {
           </span>
         </div>
         <div className="signin-section">
-          <button className="signin-button" onClick={handleUserClick}>
+          <button className="signin-button-of-the-mobile" onClick={handleUserClick}>
             <FaUser />
           </button>
         </div>
       </div>
 
+      {/* Main Content Wrapper */}
+      <div className="main-content">
+        {/* Page content here */}
+      </div>
+
       {/* Bottom Navigation */}
       <div className="bottom-navbar">
-        <div className="nav-icon">
-          <a href="/home"><FaHome /></a>
+        <div className={`nav-icon ${location.pathname === "/" ? "active" : ""}`} onClick={() => handleNavigation("/")}>
+          <FaHome />
           <span>Home</span>
         </div>
-        <div className="nav-icon">
-          <a href="/tours"><FaMapSigns /></a>
+        <div className={`nav-icon ${location.pathname === "/tours" ? "active" : ""}`} onClick={() => handleNavigation("/tours")}>
+          <FaMapSigns />
           <span>Tours</span>
         </div>
-        <div className="nav-icon">
-          <a href="/flights"><FaPlaneDeparture /></a>
+        <div className={`nav-icon ${location.pathname === "/flights" ? "active" : ""}`} onClick={() => handleNavigation("/flights")}>
+          <FaPlaneDeparture />
           <span>Flights</span>
         </div>
-        <div className="nav-icon">
-          <a href="/EmergencyContact"><FaPhoneAlt /></a>
-          <span>Support</span>
-        </div>
-        <div className="nav-icon">
-          <a href="/Chatbot"><FaClipboardList /></a>
+        <div className={`nav-icon ${location.pathname === "/Chatbot" ? "active" : ""}`} onClick={() => handleNavigation("/Chatbot")}>
+          <FaTumblrSquare />
           <span>Chat</span>
+        </div>
+        <div className={`nav-icon ${location.pathname === "/EmergencyContact" ? "active" : ""}`} onClick={() => handleNavigation("/EmergencyContact")}>
+          <FaPhoneAlt />
+          <span>Support</span>
         </div>
       </div>
     </div>

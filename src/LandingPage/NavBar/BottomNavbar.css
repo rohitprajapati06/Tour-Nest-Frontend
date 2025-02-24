@@ -1,14 +1,17 @@
+/* === Bottom Navbar Styling === */
 .bottom-navbar {
   display: flex;
   justify-content: space-around;
   align-items: center;
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   background-color: #fff;
   border-top: 1px solid #ddd;
   height: 60px;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100; /* Ensures navbar stays above content */
 }
 
 .nav-icon {
@@ -26,18 +29,22 @@
   margin-top: 4px;
 }
 
+/* Active and Hover States */
+.nav-icon.active {
+  color: black;
+  font-weight: bold;
+}
+
 .nav-icon:hover {
-  color: #007bff; /* Change color to blue on hover */
+  color: black;
 }
 
 .nav-icon a {
-  color: inherit; /* Inherit color from parent, so it's grey initially */
+  color: inherit;
+  text-decoration: none;
 }
 
-.nav-icon a:hover {
-  color: #007bff; /* Change to blue when hovered */
-}
-
+/* === Header Styling === */
 .header {
   display: flex;
   justify-content: space-between;
@@ -74,11 +81,11 @@
 }
 
 .logo-highlight {
-  color: turquoise; /* Highlight color */
+  color: turquoise;
 }
 
 .logo-highlight::selection {
-  color: black; /* Highlight color */
+  color: black;
 }
 
 .signin-section {
@@ -86,18 +93,24 @@
   align-items: center;
 }
 
-.signin-button {
+.signin-button-of-the-mobile {
   text-decoration: none;
-  font-size: 20px;
+  font-size: 21px;
   color: grey;
   font-weight: bold;
   padding: 5px 10px;
   border-radius: 50%;
   transition: background-color 0.3s, color 0.3s;
+  border: none;
 }
 
-.signin-button:hover {
-  background-color: lightblue;
-  color: #fff;
+.signin-button-of-the-mobile:hover {
+  background-color: lightgrey;
+  color: black;
   border: none;
+}
+
+/* === Ensures Content Doesn't Get Hidden Behind Navbar === */
+.main-content {
+  padding-bottom: 70px; /* Keeps space for fixed bottom navbar */
 }
