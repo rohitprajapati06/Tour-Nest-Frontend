@@ -54,7 +54,7 @@ const Airport = ({ placeholder, onSelect }) => {
           marginTop:"0%",
         }}
       />
-      {loading && <p>Loading...</p>}
+      {loading}
       {error && <p style={{ color: "red" }}>{error}</p>}
       {results.length > 0 && query !== selectedLocation && (
         <div
