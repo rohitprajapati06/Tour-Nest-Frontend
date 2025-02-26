@@ -20,13 +20,42 @@ body {
   padding: 0 4px;
 }
 
-.image-grid-column img {
+.image-container {
+  position: relative;
   margin-top: 8px;
+}
+
+.image-container img {
   vertical-align: middle;
   width: 100%;
   height: auto; /* Maintain aspect ratio */
   border-radius: 5px;
   transition: transform 0.3s;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 5px;
+}
+
+.image-container:hover .image-overlay {
+  opacity: 1;
+}
+
+.image-text {
+  font-size: 20px;
+  text-align: center;
 }
 
 .image-grid-fixed-text {
@@ -65,5 +94,9 @@ body {
 
   .image-grid-fixed-text {
     font-size: 20px;
+  }
+
+  .image-text {
+    font-size: 16px;
   }
 }
