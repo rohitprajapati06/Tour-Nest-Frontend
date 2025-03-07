@@ -191,6 +191,7 @@ const FlightsSearch = () => {
               name="adults" 
               value={formData.adults} 
               onChange={handleInputChange} 
+              required
             />
           </td>
           <td className="flight-booking-search-form-td">
