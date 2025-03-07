@@ -54,6 +54,25 @@ const FlightsSearch = () => {
   //Query Param passing data
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+  
+    // Get the current date
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0); // Reset time to midnight for accurate comparison
+  
+    // Validate departure and return dates
+    if (name === "departDate" || name === "returnDate") {
+      const selectedDate = new Date(value);
+  
+      if (selectedDate < currentDate) {
+        setError(`Please select a ${name === "departDate" ? "departure" : "return"} date that is today or in the future.`);
+        return; // Stop further execution if validation fails
+      }
+    }
+  
+    // Clear any previous errors if validation passes
+    setError("");
+  
+    // Update form data
     setFormData({ ...formData, [name]: value });
   };
 
