@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import api from "../api";  // Assuming you have a centralized api client for axios
+import api from "../api"; 
 import { useNavigate } from "react-router-dom";
-
+import { Snackbar, Alert } from "@mui/material"; 
 import "./Login.css";
 
 function Login() {
@@ -10,9 +10,13 @@ function Login() {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [openSnackbar, setOpenSnackbar] = useState(false); 
   const navigate = useNavigate();
 
-  // Handle login logic
+  useEffect(() => {
+    setOpenSnackbar(true); 
+  }, []);
+
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -23,10 +27,10 @@ function Login() {
         const { accessToken, refreshToken, userEmail } = response.data;
         localStorage.setItem("accessToken", accessToken);
         localStorage.setItem("refreshToken", refreshToken);
-        localStorage.setItem("userEmail", userEmail); // Save user's email
+        localStorage.setItem("userEmail", userEmail);
 
         setMessage("Login successful");
-        navigate("/"); // Redirect to home page
+        navigate("/"); 
       }
     } catch (err) {
       setMessage("Invalid email or password");
@@ -35,7 +39,6 @@ function Login() {
     }
   };
 
-  // Refresh the access token every 9 minutes
   const refreshAccessToken = async () => {
     const refreshToken = localStorage.getItem("refreshToken");
     if (!refreshToken) throw new Error("No refresh token found");
@@ -62,7 +65,7 @@ function Login() {
         localStorage.clear();
         navigate("/login");
       });
-    }, 9 * 60 * 1000); // Refresh every 9 minutes
+    }, 9 * 60 * 1000); 
     return () => clearInterval(interval);
   }, [navigate]);
 
@@ -104,19 +107,33 @@ function Login() {
           <button type="submit" className="loginbtn" disabled={loading}>
             {loading ? "Logging in..." : "Login"}
           </button>
-          {/*<p>Or</p>
-          <div className="social-login">
-            <button className="social-btn fb">Login with Facebook</button>
-            <button className="social-btn google">Login with Google</button>
-          </div>*/}
           <p>
             Create an Account <a href="./register"> Register Here!</a>
           </p>
-         {/*<p>
-            Forgot Password? <a href="./Forget"> Reset Password</a>
-          </p>*/}
         </form>
       </div>
+
+      {/* Custom Snackbar without icon */}
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={3000} 
+        onClose={() => setOpenSnackbar(false)}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
+        <Alert
+          onClose={() => setOpenSnackbar(false)}
+          severity="success"
+          //variant="none" // No icon
+          sx={{ 
+            backgroundColor: "black", 
+            color: "white", 
+            fontWeight: "bold",
+            boxShadow: "none",
+          }}
+        >
+          Log in to start planning your dream trip with TourNest! ✈
+        </Alert>
+      </Snackbar>
     </div>
   );
 }
