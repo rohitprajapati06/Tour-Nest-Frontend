@@ -51,30 +51,33 @@ const FlightsSearch = () => {
     });
   };
 
-  //Query Param passing data
   const handleInputChange = (e) => {
     const { name, value } = e.target;
   
-    // Get the current date
     const currentDate = new Date();
     currentDate.setHours(0, 0, 0, 0); // Reset time to midnight for accurate comparison
   
-    // Validate departure and return dates
+    const maxDate = new Date();
+    maxDate.setDate(maxDate.getDate() + 355); // Set max limit to 355 days from today
+  
     if (name === "departDate" || name === "returnDate") {
       const selectedDate = new Date(value);
   
       if (selectedDate < currentDate) {
         setError(`Please select a ${name === "departDate" ? "departure" : "return"} date that is today or in the future.`);
-        return; // Stop further execution if validation fails
+        return;
+      }
+  
+      if (selectedDate > maxDate) {
+        setError(`Please select a ${name === "departDate" ? "departure" : "return"} date within the next 1 Year.`);
+        return;
       }
     }
   
-    // Clear any previous errors if validation passes
-    setError("");
-  
-    // Update form data
+    setError(""); // Clear any previous errors
     setFormData({ ...formData, [name]: value });
   };
+  
 
   //Passing ID in Airport
   const handleAirportSelect = (field, value) => {
